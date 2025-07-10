@@ -17,12 +17,12 @@ class ProductController extends Controller
     
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'products' => 'required|array|max:5',
-            'products.*.name' => 'required|string',
-            'products.*.categories' => 'array|max:3',
-            'products.*.categories.*.name' => 'required|string',
-            'products.*.categories.*.image' => 'nullable|file|mimes:jpg,jpeg,png'
+            'products.*.name' => 'required|string|max:255',
+            'products.*.categories' => 'required|array|max:3',
+            'products.*.categories.*.name' => 'required|string|max:255',
+            'products.*.categories.*.image' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
         
         foreach ($request->products as $productData) {
