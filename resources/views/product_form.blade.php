@@ -300,7 +300,7 @@
                                 <td class="px-4 py-2">
                                     ${cat.image_path
                                         ? `<div class="relative w-fit">
-                                                <img src="/storage/${cat.image_path}" alt="${cat.name}" class="w-32 h-auto rounded border">
+                                                <img src="/storage/${cat.image_path}" alt="${cat.name}" class="w-48 h-auto rounded border">
                                                 <button class="absolute top-0 right-0 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center delete-image-btn"
                                                     data-id="${cat.id}" data-image="${cat.image_path}" title="Hapus Gambar">
                                                     ×
