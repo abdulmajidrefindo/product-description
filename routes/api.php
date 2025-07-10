@@ -1,12 +1,8 @@
-use App\Http\Controllers\Api\ProductController;
-use App\Http\Controllers\Api\CategoryController;
+<?php
 
-Route::prefix('products')->group(function () {
-    Route::post('/', [ProductController::class, 'store']);
-});
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
-Route::prefix('categories')->group(function () {
-    Route::post('/{product}', [CategoryController::class, 'store']);
-    Route::post('/{category}/upload', [CategoryController::class, 'upload']);
-    Route::delete('/{category}/image', [CategoryController::class, 'deleteImage']);
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
